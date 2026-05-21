@@ -119,11 +119,11 @@ body {
       @apply relative z-10 col-center lg:translate-y-16;
 
       h1 {
-        @apply font-semibold lg:text-3xl 2xl:text-5xl text-white;
+        @apply font-semibold lg:text-3xl 2xl:text-5xl text-white lg:translate-y-9;
       }
 
       img {
-        @apply container mx-auto w-2/3;
+        @apply container mx-auto w-2/3 lg:translate-y-9;
       }
     }
 
