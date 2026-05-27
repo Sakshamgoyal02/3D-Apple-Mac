@@ -19,8 +19,13 @@ export default function MacbookModel14(props) {
   const { nodes, materials, scene } = useGLTF('/models/macbook-14-transformed.glb');
 
   const texture = useTexture('/screen.png');
+
+  useEffect(() => {
+  if (texture) {
     texture.colorSpace = SRGBColorSpace;
     texture.needsUpdate = true;
+  }
+}, [texture]);
 
   useEffect(() => {
     scene.traverse((child) => {
@@ -28,6 +33,7 @@ export default function MacbookModel14(props) {
         if(!noChangeParts.includes(child.name)) {
           child.material.color = new Color(color);
         }
+         child.material.needsUpdate = true;
       }
     })
   }, [color, scene])
@@ -52,9 +58,8 @@ export default function MacbookModel14(props) {
       <mesh geometry={nodes.Object_96.geometry} material={materials.PaletteMaterial003} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_107.geometry} material={materials.JvMFZolVCdpPqjj} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_123.geometry}  rotation={[Math.PI / 2, 0, 0]} >
-        <meshBasicMaterial map={texture}/>
+        <meshBasicMaterial map={texture} toneMapped={false}/>
       </mesh>
-      
       <mesh geometry={nodes.Object_127.geometry} material={materials.ZCDwChwkbBfITSW} rotation={[Math.PI / 2, 0, 0]} />
     </group>
   )
