@@ -227,7 +227,7 @@ body {
     @apply w-dvw h-full overflow-hidden pt-20 lg:pt-20 flex flex-col items-center relative;
 
     h2 {
-      @apply font-semibold text-3xl lg:text-6xl text-white max-w-2xl text-center;
+      @apply font-semibold text-2xl lg:text-6xl text-white max-w-2xl text-center;
     }
 
     .wrapper {
